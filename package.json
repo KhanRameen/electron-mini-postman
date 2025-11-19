@@ -5,11 +5,17 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "electron ."
+    "build": "tsc && cpx \"src/index.html\" dist",
+    "start": "npm run build && electron dist/main.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^39.1.1"
+    "@types/electron": "^1.6.12",
+    "@types/node": "^24.10.0",
+    "cpx": "^1.5.0",
+    "electron": "^39.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }

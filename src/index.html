@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Prevent malicious content or cross-site scripting (XSS) attack -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'src'; script-src 'self'" />
+    <title>Electron Render</title>
+</head>
+<body>
+    <h1>Hello From Electron Renderer</h1>
+    <p>🍜</p>
+    <p id="info"></p>
+</body>
+<script type="module" src="renderer.js"></script>
+</html>
