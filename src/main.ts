@@ -11,13 +11,13 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, "./preload.js"),
+      preload: path.join(__dirname, "preload.js"),
+      sandbox: false,
       contextIsolation: true,
-      nodeIntegration: false,
     },
   });
-  // win.loadFile(path.join(__dirname, "index.html"));
-  win.loadFile(path.join(__dirname, "./index.html"));
+
+  win.loadFile(path.join(__dirname, "index.html"));
 };
 
 app.whenReady().then(() => {

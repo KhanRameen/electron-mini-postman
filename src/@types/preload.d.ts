@@ -3,8 +3,8 @@ export {};
 declare global {
   interface Window {
     versions: {
-      chrome: () => string;
       node: () => string;
+      chrome: () => string;
       electron: () => string;
       ping: () => Promise<any>;
     };

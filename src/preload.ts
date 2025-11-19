@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 
-console.log("preload");
+console.log("preload running");
 
 contextBridge.exposeInMainWorld("versions", {
   node: () => process.versions.node,
