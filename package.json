@@ -5,17 +5,25 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "build": "tsc && cpx \"src/index.html\" dist",
-    "start": "npm run build && electron dist/main.js"
+    "dev": "concurrently -k \"npm:dev:*\"",
+    "dev:main": "tsx main/main.ts",
+    "dev:renderer": "vite --config renderer/vite.config.ts",
+    "build": "tsc -p electron && vite build --config renderer/vite.config.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/electron": "^1.6.12",
-    "@types/node": "^24.10.0",
+    "@types/node": "^24.10.1",
+    "concurrently": "^9.2.1",
     "cpx": "^1.5.0",
-    "electron": "^39.1.1",
+    "electron": "^39.2.3",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   }
 }
