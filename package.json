@@ -6,9 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -k \"npm:dev:*\"",
-    "dev:main": "tsx main/main.ts",
+    "dev:main": "tsc -p main/tsconfig.json && electron dist/main/main.js",
     "dev:renderer": "vite --config renderer/vite.config.ts",
-    "build": "tsc -p electron && vite build --config renderer/vite.config.ts"
+    "build": "npm run build:main && npm run build:renderer",
+    "build:main": "tsc -p main/tsconfig.json",
+    "build:renderer": "vite build --config renderer/vite.config.ts"
   },
   "author": "",
   "license": "ISC",
@@ -21,9 +23,5 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
   }
 }

@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "module": "ESNext",
+    "target": "es2020",
+    "module": "esnext",
     "moduleResolution": "Node",
     "rootDir": "./",
     "outDir": "../dist/main",
     "types": ["node"],
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+     "lib": ["ESNext", "DOM"],
+     "isolatedModules": false,
   },
   "include": ["./**/*.ts"]
 }
