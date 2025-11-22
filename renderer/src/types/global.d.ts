@@ -1,8 +1,10 @@
+import type { ApiResponseType } from "./api";
+
 export {};
 declare global {
   interface Window {
     api: {
-      ping: () => any;
+      request: (ApiRequestType) => ApiResponseType;
     };
   }
 }
