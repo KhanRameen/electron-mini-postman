@@ -34,7 +34,7 @@ export const RequestForm = () => {
     }
 
     return (
-        <div style={{ padding: 20 }}>
+        <div className="p-20">
             <h1>Api Testing Tool</h1>
 
             <select value={method} onChange={(e) => setMethod(e.target.value as methods)}>
@@ -49,29 +49,29 @@ export const RequestForm = () => {
                 placeholder="https://api.example.com"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                style={{ width: "100%", marginTop: 10 }}
+                className="w-full mt-10"
             />
 
             <textarea
                 placeholder="Headers (JSON)"
                 value={headers}
                 onChange={(e) => setHeaders(e.target.value)}
-                style={{ width: "100%", height: 100, marginTop: 10 }}
+                className="w-full border-2 mt-10"
             />
 
             <textarea
                 placeholder="Body (JSON)"
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
-                style={{ width: "100%", height: 100, marginTop: 10 }}
+                className="w-full border-2 mt-10"
             />
 
-            <button onClick={handleSend} style={{ marginTop: 10 }}>
+            <button onClick={handleSend} className="mt-10">
                 Send
             </button>
 
             {response && (
-                <pre style={{ background: "#eee", padding: 10, marginTop: 20 }}>
+                <pre className="w-full border-2 mt-10 bg-gray-400" >
                     {JSON.stringify(response, null, 2)}
                 </pre>
             )}
